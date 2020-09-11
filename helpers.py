@@ -15,3 +15,19 @@ def generate_default_settings() -> bool:
 
     file = open(ENUMS_SETTINGS["FILE_NAME"], "w+")
     file.write(json.dumps(default_settings))
+
+
+def load_settings() -> dict:
+    with open(ENUMS_SETTINGS["FILE_NAME"], "r") as f:
+        try:
+            data = json.load(f)
+        except:
+            data = {}
+    return data
+
+
+def override_settings(data: dict):
+    with open(ENUMS_SETTINGS["FILE_NAME"], "w") as f:
+        f.seek(0)  # <--- should reset file position to the beginning.
+        json.dump(data, f, indent=4)
+        f.truncate()  # remove remaining part
