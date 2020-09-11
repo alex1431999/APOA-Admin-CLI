@@ -4,6 +4,7 @@ from enums import ENUMS_SETTINGS
 
 CHOICES_GENERAL = {
     "MENU_MAIN": "Main Menu",
+    "MENU_SETTINGS": "Settings Menu",
 }
 
 CHOICES_MENU_MAIN = {
@@ -11,6 +12,7 @@ CHOICES_MENU_MAIN = {
 }
 
 CHOICES_MENU_SETTINGS = {
+    "SHOW": "Show",
     "SET_MONGO_URL": "Set Mongo DB URL",
     "BACK": "Back",
 }

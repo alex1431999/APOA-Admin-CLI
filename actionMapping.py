@@ -9,16 +9,20 @@ def map_action(action: str) -> any:
     # General
     if action == prompts.CHOICES_GENERAL["MENU_MAIN"]:
         return prompts.menu_main
+    if action == prompts.CHOICES_GENERAL["MENU_SETTINGS"]:
+        return prompts.menu_settings
 
     # Main Menu
     if action == prompts.CHOICES_MENU_MAIN["SETTINGS"]:
         return prompts.menu_settings
 
     # Settings Menu
-    if action == prompts.CHOICES_MENU_SETTINGS["BACK"]:
-        return prompts.menu_main
+    if action == prompts.CHOICES_MENU_SETTINGS["SHOW"]:
+        return actions.show_settings
     if action == prompts.CHOICES_MENU_SETTINGS["SET_MONGO_URL"]:
         return actions.set_mongo_url
+    if action == prompts.CHOICES_MENU_SETTINGS["BACK"]:
+        return prompts.menu_main
 
     # Default
     return prompts.menu_main

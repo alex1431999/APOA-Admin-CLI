@@ -25,3 +25,16 @@ def set_mongo_url():
         f.truncate()  # remove remaining part
 
     return {"action": prompts.CHOICES_GENERAL["MENU_MAIN"]}
+
+
+def show_settings():
+    with open("settings.json", "r") as f:
+        try:
+            data = json.load(f)
+        except:
+            data = {}
+        print("=========DATA=========")
+        print(data)
+        print("=========DATA=========")
+
+    return {"action": prompts.CHOICES_GENERAL["MENU_SETTINGS"]}
