@@ -1,6 +1,8 @@
 """
 This module maps actions to their corresponding function which shall be executed
 """
+import sys
+
 import actions
 import prompts
 
@@ -19,6 +21,8 @@ def map_action(action: str) -> any:
         return prompts.menu_settings
     if action == prompts.CHOICES_MENU_MAIN["DATABASE"]:
         return prompts.menu_database
+    if action == prompts.CHOICES_MENU_MAIN["EXIT"]:
+        return sys.exit
 
     # Settings Menu
     if action == prompts.CHOICES_MENU_SETTINGS["SHOW"]:

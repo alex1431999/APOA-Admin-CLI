@@ -11,6 +11,7 @@ CHOICES_GENERAL = {
 CHOICES_MENU_MAIN = {
     "SETTINGS": "Settings",
     "DATABASE": "Database",
+    "EXIT": "Exit",
 }
 
 CHOICES_MENU_SETTINGS = {
