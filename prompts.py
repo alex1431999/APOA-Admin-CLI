@@ -1,5 +1,11 @@
 from PyInquirer import prompt
 
+from enums import ENUMS_SETTINGS
+
+CHOICES_GENERAL = {
+    "MENU_MAIN": "Main Menu",
+}
+
 CHOICES_MENU_MAIN = {
     "SETTINGS": "Settings",
 }
@@ -32,3 +38,14 @@ def menu_settings():
         }
     ]
     return prompt(options)
+
+
+def ask_mongo_url():
+    questions = [
+        {
+            'type': 'input',
+            'name': ENUMS_SETTINGS["MONGO_URL"],
+            'message': 'Enter your Mongo URL',
+        },
+    ]
+    return prompt(questions)
