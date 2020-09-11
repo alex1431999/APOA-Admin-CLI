@@ -1,6 +1,8 @@
 import json
 from os import path
 
+from common.mongo.controller import MongoController
+
 from enums import ENUMS_SETTINGS
 
 
@@ -31,3 +33,13 @@ def override_settings(data: dict):
         f.seek(0)  # <--- should reset file position to the beginning.
         json.dump(data, f, indent=4)
         f.truncate()  # remove remaining part
+
+
+def get_mongo_controller() -> MongoController:
+    settings = load_settings()
+    mongo_url = settings[ENUMS_SETTINGS["MONGO_URL"]]
+    db_name = settings[ENUMS_SETTINGS["MONGO_DATABASE_NAME"]]
+
+    controller = MongoController(mongo_url, db_name)
+
+    return controller
